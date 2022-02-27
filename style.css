@@ -1,0 +1,85 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    overflow: hidden;
+
+}
+ul{
+    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin: 250px;
+  
+}
+ul li{
+    list-style: none;
+    text-decoration: none;
+    color: #333;
+    font-size: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.5;
+    padding: 12px;
+    border-radius: 12px;
+    text-transform: uppercase;
+
+}
+ul:hover li{
+    color: transparent;
+    -webkit-text-stroke:1px #000 ;
+
+}
+ul li:hover{
+    color: #333;
+    background: #fff;
+    box-shadow: 0px 5px 10px ;
+}
+ul li::before{
+content: '';
+position: absolute;
+top: 50%; 
+left: 50%; 
+width: 100vw;
+height: 100vh;
+transform: translate(-50%, -50%);
+z-index: -1;
+display: flex;
+justify-content: center;
+border-color: #005bbc;
+opacity: 0;
+transition: 0.5s;
+color: rgb(0,0,0,0.05);
+font-size: 30px;
+-webkit-text-stroke:0px #000;
+font-size: 18vw;
+letter-spacing: 100px;
+
+}
+ul li:hover::before{
+content: attr(class);
+opacity: 1;
+letter-spacing: 10px;
+
+}
+ul li:nth-child(1):before
+{
+background: linear-gradient(#ff9a33 0%,#ff9a33 33%,#fff 33%,#fff 66%, #138807 66%,green 100%);
+}
+ul li:nth-child(2):before
+{
+background: linear-gradient(#005bbc 0%,#005bbc 50%,#ffd600 50%,#ffd600 100%);
+}
+ul li:nth-child(3):before
+{
+background: linear-gradient(white 0%,white 33%,blue 33%,blue 66%,red 66%,red 100%);
+}
